@@ -11,6 +11,8 @@
 - `assets/styles.css`：统一的大字、高对比、响应式样式
 - `assets/app.js`：练习组切换和题目渲染
 - `data/sets.js`：题库内容；以后新增系列主要编辑这个文件
+- `functions/api/feedback.js`：接收每道题的真实用户反馈
+- `migrations/`：反馈数据库结构
 
 ## 新增一组题
 
@@ -34,4 +36,10 @@
 
 ```bash
 npx wrangler pages deploy . --project-name suan8 --branch main
+```
+
+查看各题反馈汇总：
+
+```bash
+npx wrangler d1 execute math-brain-feedback --remote --command "SELECT set_id, question_id, SUM(vote = 1) AS helpful, SUM(vote = -1) AS needs_work FROM question_feedback GROUP BY set_id, question_id ORDER BY set_id, question_id"
 ```

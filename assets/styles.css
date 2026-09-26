@@ -55,6 +55,15 @@ summary:hover { background: var(--accent-soft); }
 .answer { margin-top: 14px; padding: 18px 20px; border-radius: 6px; background: var(--answer); font-size: 1.05rem; }
 .answer p { margin: 0 0 9px; }
 .answer p:last-child { margin-bottom: 0; }
+.feedback { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 20px 0 0 3.15rem; padding-top: 18px; border-top: 1px solid var(--line); }
+.feedback-label { color: var(--muted); font-size: .9rem; font-weight: 700; }
+.feedback-actions { display: flex; gap: 8px; }
+.feedback-button { min-height: 44px; padding: 7px 13px; border: 1px solid #a9b2ad; border-radius: 6px; color: var(--accent); background: #fff; font: inherit; font-size: .9rem; font-weight: 800; cursor: pointer; }
+.feedback-button:hover { background: var(--accent-soft); }
+.feedback-button:focus-visible { outline: 3px solid #bf7a18; outline-offset: 2px; }
+.feedback-button.is-selected { border-color: var(--accent); color: #fff; background: var(--accent); }
+.feedback-button:disabled { cursor: wait; opacity: .6; }
+.feedback-status { min-height: 1.5em; color: var(--muted); font-size: .84rem; }
 footer { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; text-align: center; }
 
 @media (max-width: 620px) {
@@ -67,10 +76,12 @@ footer { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line);
   .intro { padding: 30px 4px 24px; }
   article { padding: 22px 18px; }
   .question-head { gap: 10px; }
-  .problem, details { margin-left: 0; }
+  .problem, details, .feedback { margin-left: 0; }
   .problem { margin-top: 16px; font-size: 1.2rem; }
   .formula { font-size: 1.5em; }
   .note { padding: 16px; }
+  .feedback { align-items: flex-start; }
+  .feedback-label, .feedback-status { width: 100%; }
 }
 
 @media print {

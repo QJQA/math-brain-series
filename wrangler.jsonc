@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "suan8",
+  "pages_build_output_dir": ".",
+  "compatibility_date": "2026-09-26",
+  "d1_databases": [
+    {
+      "binding": "math_brain_feedback",
+      "database_name": "math-brain-feedback",
+      "database_id": "7306f6a3-12d3-400c-9487-fda7c141691e"
+    }
+  ]
+}
