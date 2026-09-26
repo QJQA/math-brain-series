@@ -2,7 +2,7 @@
 
 一个面向退休数学教师的静态练习网站。无需构建工具，可直接部署到 Cloudflare Pages。
 
-- 在线地址：<https://math-brain-series.pages.dev>
+- 在线地址：<https://suan8.pages.dev>
 - GitHub：<https://github.com/QJQA/math-brain-series>
 
 ## 内容架构
@@ -33,5 +33,5 @@
 当前 Pages 项目采用直接发布。更新 GitHub 后，在项目根目录运行：
 
 ```bash
-npx wrangler pages deploy . --project-name math-brain-series --branch main
+npx wrangler pages deploy . --project-name suan8 --branch main
 ```
