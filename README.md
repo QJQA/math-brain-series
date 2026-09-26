@@ -2,7 +2,7 @@
 
 一个面向退休数学教师的静态练习网站。无需构建工具，可直接部署到 Cloudflare Pages。
 
-- 在线地址：<https://suan8.pages.dev>
+- 在线地址：<https://mathmemo.pages.dev>
 - GitHub：<https://github.com/QJQA/math-brain-series>
 
 ## 内容架构
@@ -35,11 +35,17 @@
 当前 Pages 项目采用直接发布。更新 GitHub 后，在项目根目录运行：
 
 ```bash
-npx wrangler pages deploy . --project-name suan8 --branch main
+npx wrangler pages deploy . --project-name mathmemo --branch main
 ```
 
 查看各题反馈汇总：
 
 ```bash
 npx wrangler d1 execute math-brain-feedback --remote --command "SELECT set_id, question_id, SUM(vote = 1) AS helpful, SUM(vote = -1) AS needs_work FROM question_feedback GROUP BY set_id, question_id ORDER BY set_id, question_id"
+```
+
+查看组末文字反馈：
+
+```bash
+npx wrangler d1 execute math-brain-feedback --remote --command "SELECT set_id, message, created_at FROM set_comments ORDER BY created_at DESC"
 ```

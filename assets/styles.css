@@ -64,6 +64,18 @@ summary:hover { background: var(--accent-soft); }
 .feedback-button.is-selected { border-color: var(--accent); color: #fff; background: var(--accent); }
 .feedback-button:disabled { cursor: wait; opacity: .6; }
 .feedback-status { min-height: 1.5em; color: var(--muted); font-size: .84rem; }
+.conversation { margin-top: 38px; padding: 30px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.conversation-kicker { margin: 0 0 5px; color: var(--accent); font-size: .82rem; font-weight: 800; letter-spacing: .08em; }
+.conversation h2 { margin: 0 0 22px; font-family: "Songti SC", STSong, Georgia, serif; font-size: 1.45rem; letter-spacing: 0; }
+.conversation label { display: block; margin-bottom: 8px; color: var(--muted); font-size: .92rem; font-weight: 700; }
+.conversation textarea { display: block; width: 100%; min-height: 132px; resize: vertical; padding: 14px 16px; border: 2px solid #a9b2ad; border-radius: 6px; color: var(--ink); background: #fff; font: inherit; line-height: 1.65; }
+.conversation textarea:focus { border-color: var(--accent); outline: 3px solid #bf7a18; outline-offset: 2px; }
+.comment-submit-row { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 14px; }
+.comment-submit { min-height: 48px; padding: 9px 20px; border: 0; border-radius: 6px; color: #fff; background: var(--accent); font: inherit; font-weight: 800; cursor: pointer; }
+.comment-submit:hover { background: #183c31; }
+.comment-submit:focus-visible { outline: 3px solid #bf7a18; outline-offset: 2px; }
+.comment-submit:disabled { cursor: wait; opacity: .6; }
+#comment-status { color: var(--muted); font-size: .9rem; }
 footer { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; text-align: center; }
 
 @media (max-width: 620px) {
@@ -82,6 +94,9 @@ footer { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line);
   .note { padding: 16px; }
   .feedback { align-items: flex-start; }
   .feedback-label, .feedback-status { width: 100%; }
+  .conversation { padding: 22px 18px; }
+  .conversation h2 { font-size: 1.3rem; }
+  #comment-status { width: 100%; }
 }
 
 @media print {
@@ -91,6 +106,7 @@ footer { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line);
   .site-header { display: none; }
   article { break-inside: avoid; }
   details { display: none; }
+  .feedback, .conversation { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

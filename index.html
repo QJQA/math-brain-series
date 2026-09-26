@@ -32,7 +32,21 @@
     </aside>
 
     <section class="questions" id="questions" aria-label="数学练习题"></section>
-    <footer>做完后可以聊一聊：哪一题最顺手？哪一题最值得再想想？</footer>
+
+    <section class="conversation" aria-labelledby="conversation-title">
+      <p class="conversation-kicker">做完后，聊一聊</p>
+      <h2 id="conversation-title">哪一题最顺手？哪一题最值得再想想？</h2>
+      <form id="comment-form">
+        <label for="comment-text">写下你的感受或建议</label>
+        <textarea id="comment-text" name="comment" minlength="2" maxlength="500" rows="5" placeholder="例如：第 4 题很有意思；第 6 题的题意还可以再清楚一些。" required></textarea>
+        <div class="comment-submit-row">
+          <button class="comment-submit" type="submit">提交反馈</button>
+          <span id="comment-status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+
+    <footer>每日一点思考，不赶时间。</footer>
   </main>
   <script src="data/sets.js"></script>
   <script src="assets/app.js"></script>

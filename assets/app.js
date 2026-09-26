@@ -4,6 +4,9 @@
   const sets = window.MATH_SETS || [];
   const select = document.getElementById("set-select");
   const questions = document.getElementById("questions");
+  const commentForm = document.getElementById("comment-form");
+  const commentText = document.getElementById("comment-text");
+  const commentStatus = document.getElementById("comment-status");
 
   function getDeviceId() {
     const key = "math-brain-device-id";
@@ -99,8 +102,43 @@
     }
   });
 
+  commentForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const message = commentText.value.trim();
+    if (message.length < 2) {
+      commentStatus.textContent = "请至少写两个字";
+      commentText.focus();
+      return;
+    }
+
+    const submit = commentForm.querySelector("button[type='submit']");
+    submit.disabled = true;
+    commentStatus.textContent = "正在提交…";
+
+    try {
+      const response = await fetch("/api/comment", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ setId: selectedId(), message, deviceId: getDeviceId() })
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "request failed");
+
+      commentText.value = "";
+      commentStatus.textContent = "已收到，谢谢你认真告诉我";
+    } catch (error) {
+      commentStatus.textContent = error.message === "request failed" ? "暂时没有提交成功，请稍后再试" : error.message;
+    } finally {
+      submit.disabled = false;
+    }
+  });
+
   sets.forEach((set) => select.add(new Option(set.label, set.id)));
   select.addEventListener("change", () => { window.location.hash = select.value; });
-  window.addEventListener("hashchange", () => render(selectedId()));
+  window.addEventListener("hashchange", () => {
+    render(selectedId());
+    commentText.value = "";
+    commentStatus.textContent = "";
+  });
   render(selectedId());
 }());
