@@ -18,7 +18,7 @@ window.MATH_SETS = [
       {
         type: "因式分解",
         problem: '把下式分解因式：<span class="formula">x<sup class="exponent">3</sup> − 4x<sup class="exponent">2</sup> − x ＋ 4</span>',
-        answer: '<p><strong>答案：(x－4)(x－1)(x＋1)。</strong></p><p>分组：x<sup>2</sup>(x－4)－1(x－4)＝(x－4)(x<sup>2</sup>－1)，再利用平方差公式即可。</p>'
+        answer: '<p><strong>答案：(x－4)(x－1)(x＋1)。</strong></p><p><strong>第一步，把四项分成两组：</strong><br>x<sup>3</sup>－4x<sup>2</sup>－x＋4<br>＝(x<sup>3</sup>－4x<sup>2</sup>)＋(－x＋4)</p><p><strong>第二步，每组都提出相同的因式：</strong><br>＝x<sup>2</sup>(x－4)－(x－4)<br>这里“－x＋4”正好等于“－(x－4)”。</p><p><strong>第三步，再提出共同的 (x－4)：</strong><br>＝(x－4)(x<sup>2</sup>－1)<br>＝(x－4)(x－1)(x＋1)。</p>'
       },
       {
         type: "数列规律",
@@ -32,13 +32,13 @@ window.MATH_SETS = [
       },
       {
         type: "应用题",
-        problem: '甲、乙两地相距 36 千米。两人同时从两地相向而行，甲每小时走 5 千米，乙每小时走 4 千米。多久相遇？相遇时甲走了多少千米？',
-        answer: '<p><strong>答案：4 小时相遇；甲走了 20 千米。</strong></p><p>两人的速度和为 9 千米/小时，相遇时间＝36÷9＝4 小时；甲行路程＝5×4＝20 千米。</p>'
+        problem: '甲、乙两地相距 36 千米。甲从甲地出发，每小时走 5 千米；乙同时从乙地出发，每小时走 4 千米。两人迎面而行。<br><strong>几小时后相遇？相遇时甲走了多少千米？</strong>',
+        answer: '<p><strong>答案：4 小时后相遇；甲走了 20 千米。</strong></p><p><strong>先求每小时两人一共走近多少：</strong><br>5＋4＝9（千米）。<br>也就是说，每过 1 小时，两人之间的距离就减少 9 千米。</p><p><strong>再求相遇时间：</strong><br>36÷9＝4（小时）。</p><p><strong>最后求甲走的路程：</strong><br>5×4＝20（千米）。</p>'
       },
       {
-        type: "代数推理",
-        problem: '已知 <span class="formula">x ＋ 1/x ＝ 3</span>不求 x，直接求：<span class="formula">x<sup class="exponent">3</sup> ＋ 1/x<sup class="exponent">3</sup></span>',
-        answer: '<p><strong>答案：18。</strong></p><p>利用恒等式：(x＋1/x)<sup>3</sup>＝x<sup>3</sup>＋1/x<sup>3</sup>＋3(x＋1/x)。代入 3<sup>3</sup>＝所求＋3×3，故所求＝27－9＝18。</p>'
+        type: "列式推理",
+        problem: '一个两位数，十位数字与个位数字的和是 11。把十位和个位交换后，得到的新数比原数大 27。<br><strong>原来的两位数是多少？</strong>',
+        answer: '<p><strong>答案：47。</strong></p><p>设十位数字为 a，个位数字为 b。</p><p>由数字和得：a＋b＝11。<br>原数是 10a＋b，新数是 10b＋a。</p><p>新数比原数大 27：<br>(10b＋a)－(10a＋b)＝27<br>9b－9a＝27，所以 b－a＝3。</p><p>联立 a＋b＝11、b－a＝3，得 a＝4，b＝7。因此原数是 <strong>47</strong>。检验：74－47＝27。</p>'
       },
       {
         type: "数学老师的讲题题",
