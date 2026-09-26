@@ -19,12 +19,12 @@
     return Number(localStorage.getItem(`math-brain-vote:${setId}:${questionId}`)) || 0;
   }
 
-  function feedbackMarkup(setId, questionId) {
+  function feedbackMarkup(setId, questionId, displayNumber) {
     const vote = savedVote(setId, questionId);
     return `
       <div class="feedback" data-question-id="${questionId}">
         <span class="feedback-label">这道题怎么样？</span>
-        <div class="feedback-actions" role="group" aria-label="评价第 ${questionId} 题">
+        <div class="feedback-actions" role="group" aria-label="评价第 ${displayNumber} 题">
           <button class="feedback-button${vote === 1 ? " is-selected" : ""}" type="button" data-vote="1" aria-pressed="${vote === 1}">↑ 有帮助</button>
           <button class="feedback-button${vote === -1 ? " is-selected" : ""}" type="button" data-vote="-1" aria-pressed="${vote === -1}">↓ 需要改进</button>
         </div>
@@ -58,7 +58,7 @@
           <summary>显示答案与解析</summary>
           <div class="answer">${question.answer}</div>
         </details>
-        ${feedbackMarkup(set.id, index + 1)}
+        ${feedbackMarkup(set.id, question.id, index + 1)}
       </article>
     `).join("");
   }
