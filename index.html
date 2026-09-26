@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="为退休数学老师设计的每日初中数学动脑练习。">
+  <meta name="theme-color" content="#f5f2e9">
+  <title>每日数学动脑</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232a4b3f'/%3E%3Cpath d='M16 22h32M16 42h32M25 14v36M39 14v36' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <div>
+        <p class="brand">每日数学动脑</p>
+        <p class="brand-note">给熟悉数学的人，一点刚刚好的思考</p>
+      </div>
+      <label class="set-picker">练习组
+        <select id="set-select" aria-label="选择练习组"></select>
+      </label>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow" id="set-meta"></p>
+      <h1 id="page-title"></h1>
+      <p class="lede" id="set-intro"></p>
+    </section>
+
+    <aside class="note" aria-label="练习提示">
+      <p><strong>建议用时 15–20 分钟。</strong>这不是考试，不必追求速度，也不必一次全部做完。觉得有意思、需要想一想，就正合适。</p>
+    </aside>
+
+    <section class="questions" id="questions" aria-label="数学练习题"></section>
+    <footer>做完后可以聊一聊：哪一题最顺手？哪一题最值得再想想？</footer>
+  </main>
+  <script src="data/sets.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
